@@ -14,8 +14,4 @@ saveArticle(
       title: title,
       description: description,
       articleUrl: articleUrl);
-
-  if (!articlesaved.contains(savedArticleModel)) {
-    articlesaved.add(savedArticleModel);
-  }
 }

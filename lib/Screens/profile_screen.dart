@@ -49,7 +49,11 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(
               height: 30,
             ),
-            ElevatedButton(onPressed: () {}, child: const Text("Log out"))
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, "/LogIn");
+                },
+                child: const Text("Log out"))
           ],
         ),
       ),

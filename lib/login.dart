@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newzapp/Helper/validation.dart';
 
 import 'signup.dart';
 
@@ -65,6 +64,8 @@ class _LoginState extends State<Login> {
                               //     username: _usernameController.text,
                               //     password: _passwordController.text,
                               //     context: context);
+                              Navigator.pushReplacementNamed(
+                                  context, '/HomePage');
                             },
                             child: const Text(
                               "Log in",
@@ -83,7 +84,7 @@ class _LoginState extends State<Login> {
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
-                            Navigator.pushReplacementNamed(context, '/signup');
+                            Navigator.pushReplacementNamed(context, '/SignUp');
                           });
                         },
                         child: const Text(

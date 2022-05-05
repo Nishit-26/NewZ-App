@@ -1,6 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newzapp/Authentication/signup_user.dart';
 import 'package:newzapp/Helper/validation.dart';
+
+import 'Models/user_model.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -75,12 +80,19 @@ class _SignUpState extends State<SignUp> {
                         height: 45,
                         child: ElevatedButton(
                             onPressed: () async {
-                              ValidateSignup(
-                                  username: _usernameController.text,
-                                  email: _emailController.text,
-                                  password: _passwordController.text,
-                                  confirmPass: _confirmPassController.text,
-                                  context: context);
+                              // // await ValidateSignup(
+                              // //     username: _usernameController.text,
+                              // //     email: _emailController.text,
+                              // //     password: _passwordController.text,
+                              // //     confirmPass: _confirmPassController.text,
+                              // //     context: context);
+                              // await SignupUser(
+                              //     _emailController,
+                              //     _passwordController,
+                              //     _usernameController,
+                              //     context);
+                              Navigator.pushReplacementNamed(
+                                  context, "/HomePage");
                             },
                             child: const Text(
                               "Sign up",
@@ -99,7 +111,7 @@ class _SignUpState extends State<SignUp> {
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
-                            Navigator.pushReplacementNamed(context, '/login');
+                            Navigator.pushReplacementNamed(context, '/LogIn');
                           });
                         },
                         child: const Text(
@@ -153,4 +165,26 @@ class TextFields extends StatelessWidget {
       ),
     );
   }
+}
+
+// ignore: non_constant_identifier_names
+SignupUser(
+    TextEditingController emailController,
+    TextEditingController passwordController,
+    TextEditingController usernameController,
+    BuildContext context) async {
+  await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: emailController.text, password: passwordController.text);
+
+  UserModel user =
+      UserModel(username: usernameController.text, email: emailController.text);
+
+  User? fUser = FirebaseAuth.instance.currentUser;
+
+  await FirebaseFirestore.instance
+      .collection("users")
+      .doc(fUser?.uid.toString())
+      .set({"username": usernameController.text});
+
+  Navigator.pushReplacementNamed(context, '/HomePage');
 }
