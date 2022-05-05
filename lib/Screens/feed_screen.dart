@@ -270,6 +270,3 @@ class CategoryTile extends StatelessWidget {
     );
   }
 }
-
-//NEWSTILE
-

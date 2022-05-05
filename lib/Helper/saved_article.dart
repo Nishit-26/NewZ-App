@@ -15,5 +15,7 @@ saveArticle(
       description: description,
       articleUrl: articleUrl);
 
-  // ignore: iterable_contains_unrelated_type
+  if (!articlesaved.contains(savedArticleModel)) {
+    articlesaved.add(savedArticleModel);
+  }
 }

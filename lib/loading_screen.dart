@@ -14,15 +14,15 @@ class LoadingScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  'Image/fullLogo.png',
-                  cacheHeight: 160,
+                const Text(
+                  "NewZ",
+                  style: TextStyle(color: Colors.black, fontSize: 50),
                 ),
                 const SizedBox(height: 40),
                 SpinKitCircle(
                   color: Colors.blue.withOpacity(0.8),
                   size: 50.0,
-                  // duration: const Duration(seconds: 2),
+                  duration: const Duration(seconds: 1),
                 ),
               ],
             ),

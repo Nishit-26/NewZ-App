@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "558338690317",
+    "project_id": "newz-app-34fa2",
+    "storage_bucket": "newz-app-34fa2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558338690317:android:8c8c3210f8749b76b6f444",
+        "android_client_info": {
+          "package_name": "com.example.newzapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558338690317-vtn4r3bh77gn0tkl8qbhlbnb7co1bgg1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDl39SyVLfDPSj3K7ALsEihNHmnpo5MTuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558338690317-vtn4r3bh77gn0tkl8qbhlbnb7co1bgg1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
